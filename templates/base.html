@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block title %}
+    <title>李通的个人博客 清脆的键盘声</title>
+    {% endblock title %}
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/customize.css' %}" rel="stylesheet" type="text/css">
+
+    {% block link %}
+
+    {% endblock link %}
+
+
+
+    {% block style %}
+    <style type="text/css">
+
+
+    </style>
+    {% endblock style %}
+
+</head>
+<body>
+
+    {% block nav %}
+    <nav class="navbar navbar-default navhover " role="navigation">
+        <div class="container-fluid container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.ldjtu.com">清脆的键盘声</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'tweets' %}">Tweets</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <p><h6>您好：<a href="#">{{ user.username }}</a></h6></p>
+                    {% else %}
+                        <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock nav %}
+
+    {% block container %}
+    <div class="container">
+
+        {% block header %}
+        <div class="page-header">
+
+        </div>
+        {% endblock header %}
+
+
+        <div class="row center-container-hx">
+
+            {% block blogmain %}
+            <div class="col-sm-8 blog-main">
+                <div class="blog-post">
+
+                </div><!-- /.blog-post -->
+                <div class="blog-post">
+
+                </div><!-- /.blog-post -->
+
+            </div><!-- /.blog-main -->
+            {% endblock blogmain %}
+
+            {% block blog-sidebar %}
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+
+                </div>
+                <div class="sidebar-module">
+
+                </div>
+                <div class="sidebar-module">
+
+                </div>
+            </div>
+            {% endblock blog-sidebar %}
+
+        </div>
+
+        {% block centerblock %}
+        <div class="row center-block">
+
+        </div>
+        {% endblock centerblock %}
+
+    </div>
+    {% endblock container %}
+
+    {% block footer %}
+    <footer class="bottom">
+        <div class="leaflet container">
+
+        </div>
+
+        <div class="copyright">
+            <p>
+                  copyright:Li Tong Personal Technology Blog
+                <a href="https://beian.aliyun.com/account/login.htm"> 粤ICP备17154215号-1</a>
+            </p>
+        </div>
+    </footer>
+    {% endblock footer %}
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<srcipt src="{% static 'js/index.js' %}"></srcipt>
+</body>
+</html>
