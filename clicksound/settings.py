@@ -25,7 +25,7 @@ SECRET_KEY = '*vl9j4+=7dyjy2g@1w@q=5isu^_(0b4uii&ta+y=2$_#4ee+aw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -105,6 +105,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+# STATIC_ROOT='/var/www/clicksound/static/'
+
 
 STATIC_URL = '/static/'
 

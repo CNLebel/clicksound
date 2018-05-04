@@ -6,4 +6,5 @@ urlpatterns = [
     url('^$',views.index,name='index'),
     url('^about',views.about,name='about'),
     url('^tweets',views.tweets,name='tweets'),
+    url('^writings',views.writings,name='writings'),
 ]

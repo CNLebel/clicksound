@@ -10,3 +10,6 @@ def about(request):
 
 def tweets(request):
     return render(request,'mainbody/tweets.html')
+
+def writings(request):
+    return render(request,'mainbody/writings.html')
