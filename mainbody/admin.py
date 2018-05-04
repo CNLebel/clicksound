@@ -14,7 +14,23 @@ class IndexPhotoLbumAdmin(admin.ModelAdmin):
         ('图片标题', {'fields': ['imgtitle']}),
         ('图片', {'fields': ['image']}),
     ]
+
+class IndexArticleAdmin(admin.ModelAdmin):
+    list_display = ['articlenumber', 'articlename', 'articletitle', 'articlecontent','contentlink']
+    list_filter = ['articlenumber']
+    search_fields = ['articlename']
+    list_per_page = 10
+    fieldsets = [
+        ('头条信息', {'fields': ['articlenumber','articlename']}),
+        ('头条标题', {'fields': ['articletitle']}),
+        ('头条内容', {'fields': ['articlecontent','contentlink']}),
+    ]
+
+
+admin.site.register(IndexArticle,IndexArticleAdmin)
 admin.site.register(IndexPhotoLbum,IndexPhotoLbumAdmin)
+
+
 
 #about BottomPictureAdmin start
 class AboutBottomPictureAdmin(admin.ModelAdmin):

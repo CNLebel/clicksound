@@ -13,6 +13,17 @@ class IndexPhotoLbum(models.Model):
     class Meta:
         db_table='indexphotolbum'
 
+class IndexArticle(models.Model):
+    articlenumber=models.IntegerField(primary_key=True)
+    articlename=models.CharField(max_length=20,unique=True)
+    articletitle=models.CharField(max_length=50)
+    articlecontent=models.TextField()
+    contentlink=models.CharField(max_length=20)
+    def __unicode__(self):
+        return u'%s' %self.articlename
+    class Meta:
+        db_table='indexarticle'
+
 
 #about BottomPicture start
 class AboutBottomPicture(models.Model):

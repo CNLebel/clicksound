@@ -1,5 +1,7 @@
 {% extends './base.html' %}
 
+{% load static %}
+
 
 {% block link %}
 
@@ -19,20 +21,28 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="static/media/2018-04-24 20-27-34 的屏幕截图.png" alt="First slide">
-            <div class="carousel-caption"><h3></h3></div>
+            {% for plo in photolbumone %}
+            <img src="/static/media/{{ plo.image }}" alt="First slide">
+            <div class="carousel-caption"><h3>{{ plo.imgtitle }}</h3></div>
+            {% endfor %}
         </div>
         <div class="item">
-            <img src="" alt="Second slide">
-            <div class="carousel-caption"><h3></h3></div>
+            {% for plt in photolbumtwo %}
+            <img src="/static/media/{{ plt.image }}" alt="Second slide">
+            <div class="carousel-caption"><h3>{{ plt.imgtitle }}</h3></div>
+            {% endfor %}
         </div>
         <div class="item">
-            <img src="" alt="Third slide">
-            <div class="carousel-caption"><h3></h3></div>
+            {% for plt in photolbumthree %}
+            <img src="/static/media/{{ plt.image }}" alt="Third slide">
+            <div class="carousel-caption"><h3>{{ plt.imgtitle }}</h3></div>
+            {% endfor %}
         </div>
         <div class="item">
-            <img src="" alt="Fourth slide">
-            <div class="carousel-caption"><h3></h3></div>
+            {% for plf in photolbumfour %}
+            <img src="/static/media/{{ plf.image }}" alt="Fourth slide">
+            <div class="carousel-caption"><h3>{{ plf.imgtitle }}</h3></div>
+            {% endfor %}
         </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
@@ -52,51 +62,13 @@
 {% block blogmain %}
 <div class="col-sm-8 blog-main">
     <div class="row">
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
+        {% for article in article %}
         <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+            <h2>{{ article.articletitle }}</h2>
+            <p>{{ article.articlecontent }}</p>
+            <p><a class="btn btn-default" href="{{ article.contentlink }}" role="button">查看详情 &raquo;</a></p>
         </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
-        <div class=" col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
-        </div><!--/.col-xs-6.col-lg-4-->
+        {% endfor %}
     </div><!--/row-->
 </div><!-- /.blog-main -->
 {% endblock blogmain %}

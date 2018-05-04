@@ -61,26 +61,13 @@
 
 <div class="row center-block">
     <div class="container">
+        {% for bottompicture in bottompicture %}
         <div class="col-sm-3">
-            <a href="http://www.baidu.com">
-                <img class="img-responsive center-block" src="static/media/2018-04-24 20-27-34 的屏幕截图.png" alt="">
+            <a href="{{ bottompicture.contentlink }}" title="{{ bottompicture.imgname }}">
+                <img class="img-responsive center-block" src="static/media/{{ bottompicture.images }}" alt="">
             </a>
         </div>
-        <div class="col-sm-3">
-            <a href="http://www.baidu.com">
-                <img class="img-responsive center-block" src="static/media/2018-04-24 20-27-34 的屏幕截图.png" alt="">
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a href="http://www.baidu.com">
-                <img class="img-responsive center-block" src="static/media/2018-04-24 20-27-34 的屏幕截图.png" alt="">
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a href="http://www.baidu.com">
-                <img class="img-responsive center-block" src="static/media/2018-04-24 20-27-34 的屏幕截图.png" alt="">
-            </a>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
