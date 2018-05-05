@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from mainbody.models import *
+from django.core.paginator import *
 
 # Create your views here.
 
@@ -29,14 +30,29 @@ def about(request):
     #bottompicture make data start
     bottompicture=AboutBottomPicture.objects.all()
 
+    #vitae make data start
+    vitae=AboutVitae.objects.all()
+
     centext={
         #bottompicture start
         'bottompicture':bottompicture,
+        #vitae start
+        'vitae':vitae,
     }
     return render(request,'mainbody/about.html',centext)
 
-def tweets(request):
-    return render(request,'mainbody/tweets.html')
+def tweets(request,pindex):
+    #essay make data start
+    list=TweetsEssay.objects.all()
+    paginator = Paginator(list, 5)
+    essay=paginator.page(int(pindex))
+
+
+    centext={
+        #essay start
+        'essay':essay,
+    }
+    return render(request,'mainbody/tweets.html',centext)
 
 def writings(request):
     return render(request,'mainbody/writings.html')

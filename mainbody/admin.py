@@ -33,6 +33,17 @@ admin.site.register(IndexPhotoLbum,IndexPhotoLbumAdmin)
 
 
 #about BottomPictureAdmin start
+class AboutVitaeAdmin(admin.ModelAdmin):
+    list_display = ['vitaenumber', 'vitaename', 'vitaetitle', 'vitaeleft','vitaeright']
+    list_filter = ['vitaenumber']
+    search_fields = ['vitaename']
+    list_per_page = 1
+    fieldsets = [
+        ('简历信息', {'fields': ['vitaenumber', 'vitaename']}),
+        ('简历标题', {'fields': ['vitaetitle']}),
+        ('简历内容', {'fields': ['vitaeleft','vitaeright']}),
+    ]
+
 class AboutBottomPictureAdmin(admin.ModelAdmin):
     list_display = ['imgnumber','imgname','contentlink','images']
     list_filter = ['imgnumber']
@@ -43,4 +54,21 @@ class AboutBottomPictureAdmin(admin.ModelAdmin):
         ('内容链接', {'fields': ['contentlink']}),
         ('图片', {'fields': ['images']}),
     ]
+
+admin.site.register(AboutVitae)
 admin.site.register(AboutBottomPicture,AboutBottomPictureAdmin)
+
+
+
+#tweets TweetsEssayAdmin start
+class TweetsEssayAdmin(admin.ModelAdmin):
+    list_display = ['essaynumber','essayname','essaytitle','essaycontent','essayimages','imagetitle']
+    list_filter = ['essaynumber']
+    search_fields = ['essayname']
+    list_per_page = 10
+    fieldsets = [
+        ('文章信息', {'fields': ['essaynumber', 'essayname']}),
+        ('文章内容', {'fields': ['essaytitle','essaycontent']}),
+        ('文章图片', {'fields': ['essayimages','imagetitle']}),
+    ]
+admin.site.register(TweetsEssay,TweetsEssayAdmin)

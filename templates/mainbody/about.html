@@ -13,47 +13,27 @@
 {% block container %}
 <div class="container">
     <div class="row">
-        <p>
-            ldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddl
-        </p>
+        <h3 class="col-sm-6 col-sm-offset-3">
+            {% for vitae in vitae %}
+            {{ vitae.vitaetitle }}
+            {% endfor %}
+        </h3>
     </div>
 </div>
 <hr>
 <div class="container">
     <div class="col-sm-6 blog-main">
         <p>
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+            {% for vitae in vitae %}
+            {{ vitae.vitaeleft }}
+            {% endfor %}
         </p>
     </div>
     <div class="col-sm-6 blog-sidebar">
         <p>
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-            fdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+           {% for vitae in vitae %}
+            {{ vitae.vitaeright }}
+            {% endfor %}
         </p>
     </div>
 </div>

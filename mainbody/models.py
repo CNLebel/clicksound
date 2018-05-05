@@ -24,8 +24,18 @@ class IndexArticle(models.Model):
     class Meta:
         db_table='indexarticle'
 
-
 #about BottomPicture start
+class AboutVitae(models.Model):
+    vitaenumber=models.IntegerField(primary_key=True)
+    vitaename=models.CharField(max_length=20,unique=True)
+    vitaetitle=models.CharField(max_length=50)
+    vitaeleft=models.TextField()
+    vitaeright=models.TextField()
+    def __unicode__(self):
+        return u'%s' %self.vitaename
+    class Meta:
+        db_table='aboutvitae'
+
 class AboutBottomPicture(models.Model):
     imgnumber=models.IntegerField(primary_key=True)
     imgname=models.CharField(max_length=20,unique=True)
@@ -35,3 +45,16 @@ class AboutBottomPicture(models.Model):
         return u'%s' %self.imgname
     class Meta:
         db_table='aboutbottompicture'
+
+# tweets TweetsEssay start
+class TweetsEssay(models.Model):
+    essaynumber=models.IntegerField(primary_key=True)
+    essayname=models.CharField(max_length=20,unique=True)
+    essaytitle=models.CharField(max_length=50)
+    essaycontent=models.TextField()
+    essayimages=models.ImageField(upload_to='twwwtsessay')
+    imagetitle=models.CharField(max_length=20)
+    def __unicode__(self):
+        return u'%s' %self.essayname
+    class Meta:
+        db_table='tweetsessay'
